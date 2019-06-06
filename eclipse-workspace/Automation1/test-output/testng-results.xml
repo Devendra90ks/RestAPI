@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="4528" started-at="2019-06-06T09:07:55Z" finished-at="2019-06-06T09:08:00Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="4528" started-at="2019-06-06T09:07:55Z" finished-at="2019-06-06T09:08:00Z">
+      <class name="CaptureScreenshot">
+        <test-method status="PASS" signature="setUP()[pri:0, instance:CaptureScreenshot@6a024a67]" name="setUP" is-config="true" duration-ms="2634" started-at="2019-06-06T14:37:55Z" finished-at="2019-06-06T14:37:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUP -->
+        <test-method status="PASS" signature="captureScreenshot()[pri:0, instance:CaptureScreenshot@6a024a67]" name="captureScreenshot" duration-ms="173" started-at="2019-06-06T14:37:58Z" finished-at="2019-06-06T14:37:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreenshot -->
+        <test-method status="PASS" signature="setUP()[pri:0, instance:CaptureScreenshot@6a024a67]" name="setUP" is-config="true" duration-ms="1618" started-at="2019-06-06T14:37:58Z" finished-at="2019-06-06T14:37:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUP -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:CaptureScreenshot@6a024a67]" name="teardown" duration-ms="79" started-at="2019-06-06T14:37:59Z" finished-at="2019-06-06T14:38:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- CaptureScreenshot -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

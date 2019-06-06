@@ -1,0 +1,45 @@
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+
+public class AutomationFirstTestScript {
+	
+	public static void main(String[] args) { 
+		
+//		System.setProperty("webdriver.chrome.driver","/home/claritus/Downloads/chromedriver");
+//		WebDriver driver= new ChromeDriver();
+		
+		System.setProperty("webdriver.firefox.marionette", "/home/claritus/Downloads/geckodriver");
+		WebDriver driver= new FirefoxDriver();
+	
+		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().deleteAllCookies();
+	
+		driver.get("https://www.google.com");
+	
+    	List<WebElement> linkList= driver.findElements(By.tagName("a"));
+		
+		System.out.println("Total number of links=" +linkList.size());
+		
+		for(int i=0; i<=linkList.size(); i++) {
+			
+			String linkText= linkList.get(i).getText();
+			
+			System.out.println(linkText);
+		}
+		
+		driver.close();
+		 
+	}
+	
+	
+
+}

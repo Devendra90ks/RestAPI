@@ -1,0 +1,65 @@
+import java.io.File;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.google.common.io.Files;
+
+public class CaptureScreenshot {
+	
+	WebDriver driver;
+	
+	@BeforeMethod
+	public void setUP(){ 
+		
+		System.out.println("Before launch browser");
+		
+		System.setProperty("webdriver.chrome.driver","/home/claritus/Downloads/chromedriver");
+		driver= new ChromeDriver();
+		
+		System.out.println("After launch browser");
+		
+//		System.setProperty("webdriver.firefox.marionette", "/home/claritus/Downloads/geckodriver");
+//		WebDriver driver= new FirefoxDriver();
+	
+		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().deleteAllCookies();
+		
+		
+		System.out.println("Before getting url");
+	
+		driver.get("https://www.google.com");
+		
+		System.out.println("After getting url");
+		
+	}
+	
+	@Test
+	public void captureScreenshot() throws IOException {
+		
+		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		Files.copy(screenshotFile, new File("/home/claritus/Documents/CaptureScreenshot/test1.png"));
+		System.out.println("Capture screenshot successfully");
+	}
+	
+	@AfterMethod
+	
+	public void teardown() {
+		driver.quit();
+	}
+	
+
+	
+
+	
+
+}

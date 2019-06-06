@@ -1,0 +1,23 @@
+package com.qa.Read_WriteData;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class ReadDataFromExcel {
+
+	public static void main(String[] args) throws Exception {
+		
+		
+		File src =new File("/Automation1/src/com/qa/Read_WriteData/TestData.xlsx");
+		
+		FileInputStream fis =new FileInputStream(src);
+		
+		
+		
+		
+		
+
+	}
+
+}
